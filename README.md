@@ -1,3 +1,3 @@
 # spaceTech
 A simple shooter that teaches about technology.
-Project Due: March 31, 2019 at 10 'o clock
+\nProject Due: March 31, 2019 at 10 'o clock
