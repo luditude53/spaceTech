@@ -2,13 +2,16 @@
 import javax.swing.JPanel;
 import java.awt.Container;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 
+import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-public class MainMenu {
+public class MainMenu extends JFrame implements ActionListener {
 	
 	JFrame window;
 	JPanel mainMenuPanel;
@@ -21,7 +24,7 @@ public class MainMenu {
 	JButton quitBtn;
 	JButton optionBtn;
 	Font titleFont = new Font("Agency FB", Font.PLAIN, 90);
-	Font normalFont = new Font("Times New Roman", Font.PLAIN, 15);
+	Font normalFont = new Font("Agency FB", Font.PLAIN, 15);
 	
 	public static void main(String[] args) {
 		
@@ -78,10 +81,27 @@ public class MainMenu {
 		quitBtnPanel.add(quitBtn);
 		optionBtnPanel.add(optionBtn);
 		
+		quitBtn.addActionListener(this);
+		optionBtn.addActionListener(new ActionListener()
+	    {
+	        public void actionPerformed(ActionEvent e)
+	        {
+	        	OptionsMenu frame = new OptionsMenu();
+	        	frame.setVisible(true);
+
+	        }
+
+	    });
+		
 		con.add(mainMenuPanel);
 		con.add(startBtnPanel);
 		con.add(quitBtnPanel);
 		con.add(optionBtnPanel);
 	}
+
+		@Override
+		public void actionPerformed(ActionEvent event) {
+			System.exit(0);
+		}
 
 }
