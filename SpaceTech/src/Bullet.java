@@ -9,24 +9,24 @@ public class Bullet {
     public int y = 0;
     private Board board;
     private boolean fired = false;
-
+    
     public Bullet(Board b) {
         this.board = b;
     }
-
+    //paint bullet
     public void paint(Graphics2D g) {
         if (fired) {
-            g.setColor(Color.GREEN);
+            g.setColor(Color.YELLOW);
             g.fillRect(x, y, WIDTH, HEIGHT);
         }
     }
-
+    
     public void fire(int x, int y) {
         fired = true;
         this.x = x;
         this.y = y;
     }
-
+    
     public void move() {
         if (fired) {
             y -= vy;
@@ -35,6 +35,7 @@ public class Bullet {
             }
         }
     }
+    
     public void destroyed() {
         fired = false;
     }
