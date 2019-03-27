@@ -12,7 +12,7 @@ public class SpaceshipController implements KeyListener{
     public void keyTyped(KeyEvent e) {
 
     }
-    //bindings more movement and shooting
+    //bindings for movement and shooting
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
