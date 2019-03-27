@@ -31,11 +31,11 @@ public class MainMenu extends JFrame implements ActionListener {
 	JLabel mainMenuLabel;
 	JPanel startBtnPanel;
 	JPanel quitBtnPanel;
-	JPanel optionBtnPanel;
+	JPanel howBtnPanel;
 	Container con;
 	JButton startBtn;
 	JButton quitBtn;
-	JButton optionBtn;
+	JButton howToBtn;
 	Font titleFont = new Font("Agency FB", Font.PLAIN, 90);
 	Font normalFont = new Font("Agency FB", Font.PLAIN, 15);
 	
@@ -80,26 +80,26 @@ public class MainMenu extends JFrame implements ActionListener {
 		quitBtn.setForeground(Color.white);
 		quitBtn.setFont(normalFont);
 		
-		optionBtnPanel = new JPanel();
-		optionBtnPanel.setBounds(300, 375, 200, 50);
-		optionBtnPanel.setBackground(Color.black);
+		howBtnPanel = new JPanel();
+		howBtnPanel.setBounds(300, 375, 200, 50);
+		howBtnPanel.setBackground(Color.black);
 		
-		optionBtn = new JButton("Options");
-		optionBtn.setBackground(Color.black);
-		optionBtn.setForeground(Color.white);
-		optionBtn.setFont(normalFont);
+		howToBtn = new JButton("How to play");
+		howToBtn.setBackground(Color.black);
+		howToBtn.setForeground(Color.white);
+		howToBtn.setFont(normalFont);
 		
 		mainMenuPanel.add(mainMenuLabel);
 		startBtnPanel.add(startBtn);
 		quitBtnPanel.add(quitBtn);
-		optionBtnPanel.add(optionBtn);
+		howBtnPanel.add(howToBtn);
 		
 		quitBtn.addActionListener(this);
-		optionBtn.addActionListener(new ActionListener()
+		howToBtn.addActionListener(new ActionListener()
 	    {
 	        public void actionPerformed(ActionEvent e)
 	        {
-	        	OptionsMenu frame = new OptionsMenu();
+	        	HowToMenu frame = new HowToMenu();
 	        	frame.setVisible(true);
 
 	        }
@@ -122,7 +122,7 @@ public class MainMenu extends JFrame implements ActionListener {
 		con.add(mainMenuPanel);
 		con.add(startBtnPanel);
 		con.add(quitBtnPanel);
-		con.add(optionBtnPanel);
+		con.add(howBtnPanel);
 	}
 
 		@Override

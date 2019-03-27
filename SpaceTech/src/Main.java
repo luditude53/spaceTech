@@ -5,4 +5,5 @@ public class Main {
         Thread t = new Thread(game);
         t.start();
     }
+
 }
